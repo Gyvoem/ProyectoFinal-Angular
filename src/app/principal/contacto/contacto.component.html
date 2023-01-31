@@ -1,0 +1,76 @@
+<section class="box">
+<section class="alert alert-success" *ngIf="save">Registro guardado!</section>
+<section class="container-sm">
+<section class="container py-5 h-100">
+    <section class="row d-flex justify-content-center align-items-center h-100">
+      <section class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <section class="card shadow-2-strong border-dark" style="border-radius: 5px">
+          <section class="card-body px-5 text-center">
+            <h2 class="text-center pb-3">Formulario de Contacto</h2>
+    
+            <form [formGroup]="registroform">
+
+                <section class="form-group">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Nombre:</mat-label>
+                        <input matInput placeholder="Ingrese su nombre" formControlName="nombre" type="text" id="nombre">
+                        <mat-icon matSuffix>person</mat-icon>
+                    </mat-form-field>
+                    <section *ngIf="nombre?.invalid && (nombre?.dirty || nombre?.touched)">
+                        <section *ngIf="nombre?.errors?.['required']" class="alert alert-danger ms-4 col-7">
+                            El nombre es obligatorio
+                        </section>
+                        <section *ngIf="nombre?.errors?.['minlength']" class="alert alert-danger ms-4 col-7">
+                            Mínimo 3 caracteres
+                        </section>
+                    </section>
+                </section>
+        
+        
+                <section class="form-group">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Email:</mat-label>
+                        <input matInput placeholder="Ingrese su email" formControlName="email" type="email" id="email">
+                        <mat-icon matSuffix>email</mat-icon>
+                    </mat-form-field>
+                    <section *ngIf="email?.invalid && (email?.dirty || email?.touched)">
+                        <section *ngIf="email?.errors?.['required']" class="alert alert-danger ms-4 col-7">
+                            El email es obligatorio
+                        </section>
+                        <section *ngIf="email?.errors?.['email']" class="alert alert-danger ms-4 col-7">
+                            Falta simbolos
+                        </section>
+                    </section>
+                </section>
+
+                <section class="form-group">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Mensaje:</mat-label>
+                        <textarea matInput placeholder="Ingrese el mensaje" formControlName="mensaje" minlength="10" type="text" id="mensaje"></textarea>
+                        <mat-icon matSuffix>speaker_notes</mat-icon>
+                    </mat-form-field>
+                    <section *ngIf="mensaje?.invalid && (mensaje?.dirty || mensaje?.touched)">
+                        <section *ngIf="mensaje?.errors?.['required']" class="alert alert-danger ms-4 col-7">
+                            El mensaje es obligatorio
+                        </section>
+                        <section *ngIf="mensaje?.errors?.['minlength']" class="alert alert-danger ms-4 col-7">
+                            Mínimo 10 caracteres
+                        </section>
+                    </section>
+                    
+                </section>
+                
+                <section class="form-group text-center ms-3">
+                    <button mat-raised-button color="primary" class="col-3" [disabled]="registroform.invalid" (click)="EnviarMensaje()" value="Registrar">Enviar</button>
+                    <button mat-raised-button color="primary" class="col-3 m-3" (click)="Refrescar()">Refrescar</button>
+                </section>
+            </form>
+            <h2 *ngIf="menj" [ngStyle]="{'color':'blue','text-align':'center'}">"Gracias por contactarnos 😀"</h2>
+            <section>
+            </section>
+          </section>
+        </section>
+      </section>
+    </section>
+  </section>
+</section>

@@ -1,0 +1,53 @@
+<section class="box">
+<section class="container-sm ">
+    <section class="container py-5 h-100">
+        <section class="row d-flex justify-content-center align-items-center h-100">
+            <section class="col-12 col-md-8 col-lg-6 col-xl-5">
+                <section class="card shadow-2-strong border-dark" style="border-radius: 5px">
+                    <section class="card-body px-5 text-center">
+                        <form [formGroup]="registroform" >
+                        <h2 class="text-center pb-3">Inicio de sesión</h2>
+                
+                        <!------------ INPUT Y VALIDACIÓN USUARIO ------------>
+                        <section class="form-group text-center">
+                            <mat-form-field appearance="outline">
+                              <mat-label>Usuario:</mat-label>
+                              <input matInput placeholder="Ingresa tu usuario" formControlName="usuario" type="text" id="username">
+                              <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+                            </mat-form-field>
+                            <section *ngIf="usuario?.invalid && (usuario?.dirty || usuario?.touched)">
+                                <section *ngIf="usuario?.errors?.['required']" class="alert alert-danger ms-4 col-7">
+                                    El usuario es obligatorio
+                                </section>
+                            </section>
+                        </section>    
+                    
+                        <!------------ INPUT Y VALIDACIÓN CONTRASEA ------------>
+                        <section class="form-group text-center">
+                            <mat-form-field appearance="outline">
+                                <mat-label>Contraseña:</mat-label>
+                                <input matInput placeholder="Ingresa tu contraseña" formControlName="password" type="password" id="password" minlength="6">
+                                <mat-icon matSuffix>vpn_key</mat-icon>
+                            </mat-form-field>
+                            <section *ngIf="password?.invalid && (password?.dirty || password?.touched)">
+                                <section *ngIf="password?.errors?.['required']" class="alert alert-danger ms-4 col-7">
+                                    La contraseña es obligatoria
+                                </section>
+                            </section>
+                        </section>
+                    
+                        <!------------ BUTTON INICIAR SESION------------>
+                        <section class="example-button-row text-center">
+                            <button mat-raised-button color="primary" [disabled]="registroform.invalid" (click)="login()" value="iniciar sesion" >Iniciar sesion</button>
+                        </section>
+                    
+                        <h2 class="text-center mt-4"> {{errorLogin}} </h2>
+                        
+                        </form>
+                    </section>
+                </section>
+            </section>
+        </section>
+    </section>
+</section>
+</section>
