@@ -12,8 +12,8 @@ describe('AppComponent', () => {
         RouterTestingModule,
         //aqui
         MaterialModule,
-        FormsModule,
-        ReactiveFormsModule    
+        /* FormsModule,
+        ReactiveFormsModule  */   
       ],
       declarations: [
         AppComponent,
