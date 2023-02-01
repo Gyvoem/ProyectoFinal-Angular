@@ -3,7 +3,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material/material.module';
+import { ContactoComponent } from './principal/contacto/contacto.component';
+import { ErrorComponent } from './principal/error/error.component';
+import { HomeComponent } from './principal/home/home.component';
+import { LoginComponent } from './principal/login/login.component';
 import { NavbarComponent } from './principal/navbar/navbar.component';
+import { NotfoundComponent } from './principal/notfound/notfound.component';
+import { PerfilComponent } from './principal/perfil/perfil.component';
+import { UsuariosComponent } from './principal/usuarios/usuarios.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
@@ -17,7 +24,17 @@ describe('AppComponent', () => {
       ],
       declarations: [
         AppComponent,
-        NavbarComponent //el navbar, no afecta
+
+        //AQUI, no afecta tampoco
+        NavbarComponent,
+          ContactoComponent,
+          HomeComponent,
+          UsuariosComponent,
+          ErrorComponent,
+          LoginComponent,
+          PerfilComponent,
+          NotfoundComponent
+      
       ],
     }).compileComponents();
   });
