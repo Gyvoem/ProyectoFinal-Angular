@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from '../app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NavbarComponent } from './navbar/navbar.component';
-import { LayoutModule } from '@angular/cdk/layout';
+
+/* import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -20,8 +21,15 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import {matFormFieldAnimations, MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+ */
 
-
+import { ContactoComponent } from './contacto/contacto.component';
+import { HomeComponent } from './home/home.component';
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ErrorComponent } from './error/error.component';
+import { LoginComponent } from './login/login.component';
+import { PerfilComponent } from './perfil/perfil.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 
 @NgModule({
@@ -40,7 +48,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    LayoutModule,
+    
+    /* LayoutModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
@@ -48,9 +57,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     MatListModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSlideToggleModule
-    
-    
+    MatSlideToggleModule */
   ],
 
   exports:[
@@ -60,14 +67,6 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     UsuariosComponent,
     ErrorComponent,
     LoginComponent,
-    MatFormFieldModule,
-    MatSlideToggleModule
-
-
-
-
-
-
   ]
 
 })

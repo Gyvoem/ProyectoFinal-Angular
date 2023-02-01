@@ -1,15 +1,23 @@
 import { TestBed } from '@angular/core/testing';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 import { AppComponent } from './app.component';
+import { MaterialModule } from './material/material.module';
+import { NavbarComponent } from './principal/navbar/navbar.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [
-        RouterTestingModule
+        RouterTestingModule,
+        //aqui
+        MaterialModule,
+        FormsModule,
+        ReactiveFormsModule    
       ],
       declarations: [
-        AppComponent
+        AppComponent,
+        NavbarComponent //el navbar, no afecta
       ],
     }).compileComponents();
   });
