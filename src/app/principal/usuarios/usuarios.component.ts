@@ -8,15 +8,20 @@ import { UserserviceService } from 'src/app/services/userservice.service';
   styleUrls: ['./usuarios.component.css']
 })
 export class UsuariosComponent {
-  constructor(private userService: UserserviceService){}
 
-  // Crear objeto que se evniara a al api
-  datos: Users[] = 
-      [
-        {Id: '', Nombre: '', Apellido:'', Correo:''}
-      ];
-  
-  onSubmit(){
-    this.userService.postUser(this.datos[0]).subscribe();
+
+  constructor(private servicio: UserserviceService){}
+ 
+  listado = new Array();
+
+  ngOnInit(){ 
+    this.servicio.getUsuariosInterceptor().subscribe({
+      next: (response: any) => {
+        this.listado = response.body; 
+        console.log(response)
+      },
+      error: (e) => console.error(e),
+      complete: () => console.info("La API devolvio todos los registros")
+    });   
   }
 }

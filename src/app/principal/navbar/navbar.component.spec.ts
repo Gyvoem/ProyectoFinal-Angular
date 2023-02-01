@@ -8,6 +8,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 
 import { NavbarComponent } from './navbar.component';
+import { MaterialModule } from 'src/app/material/material.module';
+import { AutenticacionService } from 'src/app/services/autenticacion.service';
 
 describe('NavbarComponent', () => {
   let component: NavbarComponent;
@@ -18,12 +20,8 @@ describe('NavbarComponent', () => {
       declarations: [NavbarComponent],
       imports: [
         NoopAnimationsModule,
-        LayoutModule,
-        MatButtonModule,
-        MatIconModule,
-        MatListModule,
-        MatSidenavModule,
-        MatToolbarModule,
+        MaterialModule,
+        AutenticacionService
       ]
     }).compileComponents();
   }));

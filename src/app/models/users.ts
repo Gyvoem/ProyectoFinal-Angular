@@ -6,4 +6,12 @@ export interface Users {
    Correo: string;
 }
 
+export interface Usuario {
+   id: string;
+   name: string;
+   username: string;
+   email: string;
+   phone: string;
+   website: string;
+ }
 
