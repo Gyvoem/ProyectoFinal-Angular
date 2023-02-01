@@ -10,6 +10,8 @@ import { UserinterceptorsService } from './services/userinterceptors.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import {matFormFieldAnimations, MatFormFieldModule} from '@angular/material/form-field';
+import { MaterialModule } from './material/material.module';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,10 @@ import {matFormFieldAnimations, MatFormFieldModule} from '@angular/material/form
     HttpClientModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
-    
+
+    ReactiveFormsModule,
+    FormsModule,
+    // MaterialModule //ESTOS ? tampoco    
   ],
   providers: [
     {
